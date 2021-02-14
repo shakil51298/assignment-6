@@ -28,7 +28,6 @@ const showImages = (images) => {
     div.innerHTML = ` <img class="img-fluid img-thumbnail" onclick=selectItem(event,"${image.webformatURL}") src="${image.webformatURL}" alt="${image.tags}">`;
     gallery.appendChild(div)
   })
-
 }
 
 const getImages = (query) => {
@@ -139,8 +138,7 @@ searchBtn.addEventListener('click', function () {
   // sliders.length = 0;
   if (search.value == '') {
     alert('please type something')
-  } 
-  else {
+  } else {
     showCarusel();
   }
 })
@@ -152,8 +150,7 @@ sliderBtn.addEventListener('click', function () {
 search.addEventListener('keyup', function (e) {
   if (search.value == '' && e.keyCode === 13) {
     alert('You Didnt Fill');
-  } 
-  else if (e.keyCode === 13) {
+  } else if (e.keyCode === 13) {
     // document.querySelector('.main').style.display = 'none';
     // clearInterval(timer);
     // const search = document.getElementById('search');
@@ -172,10 +169,9 @@ const Spinner = () => {
 
 sliderBtn.addEventListener('click', function () {
   const duration = document.getElementById('duration').value;
-  if (duration <0) {
+  if (duration < 0) {
     alert('time would not be negative value')
-  }  
-  else{
+  } else {
     createSlider();
   }
 });
