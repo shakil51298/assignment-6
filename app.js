@@ -133,7 +133,7 @@ searchBtn.addEventListener('click', function () {
   // getImages(search.value)
   // sliders.length = 0;
   if (search.value == '') {
-    alert('please something for  Search')
+    alert('please type something for search')
   }
   else{
     showCarusel();
@@ -143,17 +143,17 @@ searchBtn.addEventListener('click', function () {
 sliderBtn.addEventListener('click', function () {
   createSlider()
 })
-
 // working with Keybord Enter Key
 search.addEventListener('keyup', function (e) {
-  if (e.keyCode === 13) {
+  if (search.value == '' && e.keyCode === 13) {
+    alert('You Didnt Fill the search option');
+  }
+  else if (e.keyCode === 13) {
     // document.querySelector('.main').style.display = 'none';
     // clearInterval(timer);
     // const search = document.getElementById('search');
     // getImages(search.value)
     // sliders.length = 0;
-
     showCarusel()
-
   }
 });
