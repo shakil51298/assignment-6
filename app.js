@@ -132,7 +132,12 @@ searchBtn.addEventListener('click', function () {
   // const search = document.getElementById('search');
   // getImages(search.value)
   // sliders.length = 0;
-  showCarusel()
+  if (search.value == '') {
+    alert('please something for  Search')
+  }
+  else{
+    showCarusel();
+  }
 })
 
 sliderBtn.addEventListener('click', function () {
@@ -149,5 +154,6 @@ search.addEventListener('keyup', function (e) {
     // sliders.length = 0;
 
     showCarusel()
+
   }
 });
