@@ -19,7 +19,9 @@ const showImages = (images) => {
   imagesArea.style.display = 'block';
   gallery.innerHTML = '';
   // show gallery title
+  Spinner();
   galleryHeader.style.display = 'flex';
+
   images.forEach(image => {
     let div = document.createElement('div');
     div.className = 'col-lg-3 col-md-4 col-xs-6 img-item mb-2';
@@ -68,7 +70,9 @@ const createSlider = () => {
   document.querySelector('.main').style.display = 'block';
   // hide image aria
   imagesArea.style.display = 'none';
+
   const duration = document.getElementById('duration').value || 1000;
+
   sliders.forEach(slide => {
     let item = document.createElement('div')
     item.className = "slider-item";
@@ -125,6 +129,7 @@ const showCarusel = () => {
   const search = document.getElementById('search');
   getImages(search.value)
   sliders.length = 0;
+  Spinner();
 }
 searchBtn.addEventListener('click', function () {
   // document.querySelector('.main').style.display = 'none';
@@ -134,8 +139,8 @@ searchBtn.addEventListener('click', function () {
   // sliders.length = 0;
   if (search.value == '') {
     alert('please type something for search')
-  }
-  else{
+  } 
+  else {
     showCarusel();
   }
 })
@@ -147,7 +152,7 @@ sliderBtn.addEventListener('click', function () {
 search.addEventListener('keyup', function (e) {
   if (search.value == '' && e.keyCode === 13) {
     alert('You Didnt Fill the search option');
-  }
+  } 
   else if (e.keyCode === 13) {
     // document.querySelector('.main').style.display = 'none';
     // clearInterval(timer);
@@ -155,5 +160,22 @@ search.addEventListener('keyup', function (e) {
     // getImages(search.value)
     // sliders.length = 0;
     showCarusel()
+  }
+});
+
+const Spinner = () => {
+  const spinner = document.getElementById('loading').classList;
+  const imagesArea = document.querySelector('.images').classList;
+  spinner.toggle('d-none');
+  imagesArea.toggle('d-none');
+};
+
+sliderBtn.addEventListener('click', function () {
+  const duration = document.getElementById('duration').value;
+  if (duration <=0) {
+    alert('time would not be negative value')
+  }  
+  else{
+    createSlider();
   }
 });

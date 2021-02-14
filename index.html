@@ -24,24 +24,33 @@
       </div>
       <button type="button" id="search-btn" class="btn btn-primary mb-2">Search</button>
     </div>
+
+    <!-- spinner -->
+
+    <div id="loading" class="d-none mx-auto py-5">
+      <div class="spinner-border mx-auto d-flex justify-content-center " role="status">
+        <span class="visually-hidden"></span>
+      </div>
+    </div>
+    <!-- image cards or single images -->
     <section class="images">
       <div class="justify-content-around align-items-center mt-3 gallery-header mb-2">
         <h3 class="head-title text-center">Select image for create slider</h3>
         <div class="input-group col-md-3 mb-2 mb-md-0">
-          <input class="form-control" id="duration" placeholder="slider change duration">
+          <input class="form-control" id="duration" placeholder="slider change duration" type="number">
         </div>
-        <button id="create-slider" class="btn btn-primary px-5">Create slider</button>
+        <button id="create-slider" class="btn btn-primary px-5" type="submit">Create slider</button>
       </div>
       <div class="row gallery">
-        
+
       </div>
     </section>
     <!-- slider -->
-    <div class="main">
+    <div class="main ">
       <section class="mt-5" id="sliders">
 
       </section>
-      <div class="dots d-flex mt-2 w-100 justify-content-center align-items-center bg-light">
+      <div class="dots d-flex mt-2 w-100 justify-content-center align-items-center bg-light ">
         <span class="dot" onclick="changeItem(-1)"></span>
         <span class="dot" onclick="changeItem(1)"></span>
       </div>
@@ -49,6 +58,11 @@
   </div>
   <!-- Optional JavaScript -->
   <script src="./app.js"></script>
+  <!-- <script src="ss.js"></script> -->
+  <!-- bootstrap js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+  </script>
 </body>
 
 </html>
