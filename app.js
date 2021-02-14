@@ -138,7 +138,7 @@ searchBtn.addEventListener('click', function () {
   // getImages(search.value)
   // sliders.length = 0;
   if (search.value == '') {
-    alert('please type something for search')
+    alert('please type something')
   } 
   else {
     showCarusel();
@@ -151,7 +151,7 @@ sliderBtn.addEventListener('click', function () {
 // working with Keybord Enter Key
 search.addEventListener('keyup', function (e) {
   if (search.value == '' && e.keyCode === 13) {
-    alert('You Didnt Fill the search option');
+    alert('You Didnt Fill');
   } 
   else if (e.keyCode === 13) {
     // document.querySelector('.main').style.display = 'none';
@@ -172,7 +172,7 @@ const Spinner = () => {
 
 sliderBtn.addEventListener('click', function () {
   const duration = document.getElementById('duration').value;
-  if (duration <=0) {
+  if (duration <0) {
     alert('time would not be negative value')
   }  
   else{
