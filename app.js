@@ -32,8 +32,7 @@ const getImages = (query) => {
   fetch(`https://pixabay.com/api/?key=${KEY}=${query}&image_type=photo&pretty=true`)
     .then(response => response.json())
     .then(data => showImages(data.hits))
-    // console.log(data.hitS);
-    // .catch(err => console.log(err))
+    .catch(err => console.log(err))
 }
 
 let slideIndex = 0;
@@ -64,7 +63,7 @@ const createSlider = () => {
   <span class="next" onclick="changeItem(1)"><i class="fas fa-chevron-right"></i></span>
   `;
 
-  sliderContainer.appendChild(prevNext)
+  sliderContainer.appendChild(prevNext);
   document.querySelector('.main').style.display = 'block';
   // hide image aria
   imagesArea.style.display = 'none';
@@ -76,7 +75,7 @@ const createSlider = () => {
     src="${slide}"
     alt="">`;
     sliderContainer.appendChild(item)
-  })
+  });
   changeSlide(0)
   timer = setInterval(function () {
     slideIndex++;
@@ -105,11 +104,10 @@ const changeSlide = (index) => {
 
   items.forEach(item => {
     item.style.display = "none"
-  })
+  });
 
   items[index].style.display = "block"
 }
-
 searchBtn.addEventListener('click', function () {
   document.querySelector('.main').style.display = 'none';
   clearInterval(timer);
