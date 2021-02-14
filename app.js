@@ -4,6 +4,7 @@ const galleryHeader = document.querySelector('.gallery-header');
 const searchBtn = document.getElementById('search-btn');
 const sliderBtn = document.getElementById('create-slider');
 const sliderContainer = document.getElementById('sliders');
+const search = document.getElementById('search');
 // selected image 
 let sliders = [];
 
@@ -39,7 +40,7 @@ let slideIndex = 0;
 const selectItem = (event, img) => {
   let element = event.target;
   element.classList.add('added');
- 
+
   let item = sliders.indexOf(img);
   if (item === -1) {
     sliders.push(img);
@@ -108,14 +109,45 @@ const changeSlide = (index) => {
 
   items[index].style.display = "block"
 }
-searchBtn.addEventListener('click', function () {
+
+
+// const displayImg = () => {
+//   document.querySelector('.main').style.display = 'none';
+//   clearInterval(timer);
+//   getImages(search.value);
+//   sliders.length = 0;
+// };
+
+// showing Slides
+const showCarusel = () => {
   document.querySelector('.main').style.display = 'none';
   clearInterval(timer);
   const search = document.getElementById('search');
   getImages(search.value)
   sliders.length = 0;
+}
+searchBtn.addEventListener('click', function () {
+  // document.querySelector('.main').style.display = 'none';
+  // clearInterval(timer);
+  // const search = document.getElementById('search');
+  // getImages(search.value)
+  // sliders.length = 0;
+  showCarusel()
 })
 
 sliderBtn.addEventListener('click', function () {
   createSlider()
 })
+
+// working with Keybord Enter Key
+search.addEventListener('keyup', function (e) {
+  if (e.keyCode === 13) {
+    // document.querySelector('.main').style.display = 'none';
+    // clearInterval(timer);
+    // const search = document.getElementById('search');
+    // getImages(search.value)
+    // sliders.length = 0;
+
+    showCarusel()
+  }
+});
